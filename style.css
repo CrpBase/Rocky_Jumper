@@ -21,16 +21,16 @@ body {
   border-radius: 16px;
   padding-top: 40px;
   position: relative;
-  width: 400px;
-  height: 600px;
+  width: 500px;
+  height: 750px;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 canvas {
   display: block;
-  width: 400px;
-  height: 600px;
+  width: 500px;
+  height: 750px;
   background-color: transparent;
   touch-action: none;
   -webkit-user-select: none;
