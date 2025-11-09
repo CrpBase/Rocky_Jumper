@@ -426,3 +426,25 @@ function checkEnemyCollision() {
     }
   });
 }
+// 
+(function setupAutoScale() {
+    const canvas = document.getElementById('gameCanvas');
+    const stage = document.getElementById('stage');
+    if (!canvas || !stage) return;
+    const baseW = 400, baseH = 600;
+
+    function rescale() {
+        const stageW = stage.offsetWidth;
+        const stageH = stage.offsetHeight;
+        const scale = Math.min(stageW / baseW, stageH / baseH);
+        
+        // 
+        canvas.style.width = `${stageW}px`;
+        canvas.style.height = `${stageH}px`;
+    }
+    
+    window.addEventListener('resize', rescale);
+    // 
+    setTimeout(rescale, 0); 
+})();
+
