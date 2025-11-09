@@ -1,3 +1,5 @@
+window.addEventListener('DOMContentLoaded', (event) => {
+
 import { submitScore, loadLeaderboard } from './firebase_leaderboard.js';
 
 let canvas, ctx;
@@ -447,4 +449,10 @@ function checkEnemyCollision() {
     // 
     setTimeout(rescale, 0); 
 })();
+  
+  
+});
+
+
+
 
