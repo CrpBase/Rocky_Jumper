@@ -125,8 +125,8 @@ function init() {
   doodle = {
     x: 200,
     y: 500,
-    width: 70,
-    height: 70,
+    width: 55,
+    height: 55,
     vy: 0,
     gravity: 0.2,
     jump: -10,
