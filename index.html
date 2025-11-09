@@ -1,54 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rocky Jumper</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jumper Dobby</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
+
   <div id="namePrompt" class="modal">
     <div class="modal-content">
       <h2>Enter Your Name</h2>
-      <input type="text" id="playerNameInput" placeholder="Your name" />
+      <input type="text" id="playerNameInput" placeholder="Your name">
       <button id="saveNameBtn">Continue</button>
     </div>
   </div>
 
   <div id="menu" style="display:none;">
-    <h1>Rocky Jumper</h1>
+    <h1>Jumper Dobby</h1>
     <img src="assets/gif.gif" alt="Game animation" style="margin: 20px auto 10px; display: block; max-width: 180px;">
     <div class="button-group">
       <button id="startBtn">Start</button>
       <button id="leaderboardBtn">Leaderboard</button>
-      <a href="https://www.seismic.systems/" target="_blank">
-        <button id="joinBtn">Join Seismic</button>
-      </a>
+      <a href="https://sentient.foundation" target="_blank"><button id="joinBtn">Join Sentient</button></a>
     </div>
   </div>
 
-  <div id="game" style="display:none; position: relative;">
+  <div id="game" style="display:none;">
     <div id="scoreCounter">Score: 0</div>
-    <canvas id="gameCanvas" width="400" height="600"></canvas>
+    <div id="stage">
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+    </div>
   </div>
 
   <div id="gameOver" style="display:none; text-align:center;">
-  <h2>Game Over</h2>
-  <img id="goImg" src="assets/go.png" alt="Game Over" style="margin:20px auto 10px; max-width:160px; display:block;" />
-  <p id="scoreDisplay"></p>
-  <button id="restartBtn">Restart</button>
-  <button id="menuBtn">Menu</button>
-</div>
-
-
-  <div id="leaderboard" style="display:none; text-align:center;">
-    <h2>🏆 Leaderboard</h2>
-    <table id="leaderboardTable" style="margin: 0 auto; font-size: 18px;">
-      <tr><th>#</th><th>Name</th><th>Score</th></tr>
-    </table>
-    <button id="backToMenuBtn">Back</button>
+    <h2>Game Over</h2>
+    <img id="goImg" src="assets/go.png" alt="Game Over" style="margin:20px auto 10px; max-width:160px; display:block;">
+    <p id="finalScore">Your score: 0</p>
+    <button id="restartBtn">Restart</button>
+    <button id="backToMenuBtn">Back to Menu</button>
   </div>
 
   <script type="module" src="script.js"></script>
