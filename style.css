@@ -2,35 +2,40 @@
 body {
   margin: 0;
   background: #f5f5f5;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Segoe UI, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 #game {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
   background-color: #f9f5ef;
-  background-image: url('assets/background.png');
+  background-image: url(assets/background.png);
   background-repeat: repeat;
-  background-size: contain;
-  border: 6px solid #000;
+  background-size: auto;
   border-radius: 16px;
-  padding-top: 40px;
-  position: relative;
-  width: 600px;
-  height: 880px;
   box-sizing: border-box;
   overflow: hidden;
+  position: relative;
 }
 
-canvas {
+#stage {
+  position: relative;
+  width: min(95vw, 90vh * (2/3));
+  aspect-ratio: 2 / 3;
+}
+
+#stage canvas {
+  width: 100%;
+  height: 100%;
   display: block;
-  width: 600px;
-  height: 880px;
   background-color: transparent;
   touch-action: none;
   -webkit-user-select: none;
@@ -40,13 +45,14 @@ canvas {
 
 #scoreCounter {
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   color: #000;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   z-index: 10;
+  text-shadow: 1px 1px 2px white;
 }
 
 #menu, #gameOver {
@@ -69,55 +75,42 @@ button {
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 220px;
+  transition: background-color 0.3s;
+  min-width: 200px;
 }
 
 button:hover {
-  background-color: #444;
+  background-color: #555;
 }
 
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
   display: none;
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
   justify-content: center;
   align-items: center;
-  z-index: 100;
 }
 
 .modal-content {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  width: 300px;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-table {
-  border-collapse: collapse;
-  margin: 20px auto;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
   width: 80%;
+  max-width: 300px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-table, th, td {
-  border: 1px solid #aaa;
-}
-
-th, td {
-  padding: 8px 12px;
+#playerNameInput {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
